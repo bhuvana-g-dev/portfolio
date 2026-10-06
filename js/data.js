@@ -28,7 +28,7 @@ const PORTFOLIO = {
     linkedinUrl: "https://www.linkedin.com/in/bhuvaneshwari-g06",
     github: "bhuvana-g-dev",
     githubUrl: "https://github.com/bhuvana-g-dev",
-    phone: "7604910224",
+    phone: "7806830070",
     // STEP 1: Go to https://web3forms.com
     // STEP 2: Enter your email → get a free Access Key
     // STEP 3: Paste that key here
