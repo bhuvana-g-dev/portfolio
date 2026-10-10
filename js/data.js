@@ -32,7 +32,7 @@ const PORTFOLIO = {
     // STEP 1: Go to https://web3forms.com
     // STEP 2: Enter your email → get a free Access Key
     // STEP 3: Paste that key here
-    web3formsKey: "YOUR_WEB3FORMS_KEY"
+    web3formsKey: "af3cd545-c5ec-4ed7-a208-1c685bfaed59"
   },
 
   /* ── EDUCATION ───────────────────────────────────────── */
