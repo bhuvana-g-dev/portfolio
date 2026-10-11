@@ -277,6 +277,46 @@ const PORTFOLIO = {
       color: "#00684a",
       image: "assets/images/certificates/mongodbaivectorsearch.png",
       verifyLink: "assets/images/certificates/mongodbaivectorsearch.png"
+    },
+    {
+      id: 16,
+      title: "How To CSS",
+      issuer: "Codekaro",
+      category: "Frontend",
+      year: "2025",
+      color: "#2563eb",
+      image: "assets/images/certificates/howtocss.png",
+      verifyLink: "assets/images/certificates/howtocss.png"
+    },
+    {
+      id: 17,
+      title: "Innovate To Elevate",
+      issuer: "Thiagarajar College",
+      category: "Competition",
+      year: "2026",
+      color: "#0284c7",
+      image: "assets/images/certificates/innovatestoelevate.png",
+      verifyLink: "assets/images/certificates/innovatestoelevate.png"
+    },
+    {
+      id: 18,
+      title: "MongoDB Atlas Cloud",
+      issuer: "MongoDB",
+      category: "Cloud",
+      year: "2024",
+      color: "#00ed64",
+      image: "assets/images/certificates/mongodbatlas.png",
+      verifyLink: "assets/images/certificates/mongodbatlas.png"
+    },
+    {
+      id: 19,
+      title: "BASH Training (Score: 70%)",
+      issuer: "IIT Bombay",
+      category: "Programming",
+      year: "2024",
+      color: "#4b5563",
+      image: "assets/images/certificates/bashtraining.png",
+      verifyLink: "assets/images/certificates/bashtraining.png"
     }
   ],
 

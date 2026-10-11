@@ -131,7 +131,9 @@ function renderCertificates() {
     "Hackathon": "⚡",
     "Innovation": "★",
     "Technical Meet": "✦",
-    "Database": "⛃"
+    "Database": "⛃",
+    "Frontend": "⬡",
+    "Competition": "★"
   };
 
   const imageHTML = c.image
