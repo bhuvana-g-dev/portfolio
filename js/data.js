@@ -317,12 +317,28 @@ const PORTFOLIO = {
       color: "#4b5563",
       image: "assets/images/certificates/bashtraining.png",
       verifyLink: "assets/images/certificates/bashtraining.png"
+    },
+    {
+      id: 20,
+      title: "BYTES 2K26 – 1st Prize Web Designing",
+      issuer: "The American College",
+      category: "Frontend",
+      year: "2026",
+      color: "#c9a84c",
+      image: "assets/images/certificates/bytes2k26.png",
+      verifyLink: "assets/images/certificates/bytes2k26.png"
     }
   ],
 
   /* ── ACHIEVEMENTS ─────────────────────────────────────── */
   // Hero stat "Hackathons" auto-counts this array.
   achievements: [
+    {
+      type: "First Prize",
+      title: "BYTES 2K26 – Web Designing",
+      description: "Won First Prize in the Web Designing inter-collegiate competition at The American College, Madurai.",
+      year: "2026"
+    },
     {
       type: "First Prize",
       title: "Project Expo 2026",
