@@ -129,7 +129,8 @@ function renderCertificates() {
     "Cloud": "◈",
     "AI & ML": "⬡",
     "Hackathon": "⚡",
-    "Innovation": "★"
+    "Innovation": "★",
+    "Technical Meet": "✦"
   };
 
   const imageHTML = c.image

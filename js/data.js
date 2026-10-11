@@ -217,6 +217,36 @@ const PORTFOLIO = {
       color: "#ef4444",
       image: "assets/images/certificates/rubytraining.png",
       verifyLink: "assets/images/certificates/rubytraining.png"
+    },
+    {
+      id: 10,
+      title: "PHP and MySQL Training",
+      issuer: "IIT Bombay",
+      category: "Programming",
+      year: "2025",
+      color: "#3b82f6",
+      image: "assets/images/certificates/phpandmysql.png",
+      verifyLink: "assets/images/certificates/phpandmysql.png"
+    },
+    {
+      id: 11,
+      title: "PowerBI AI Dashboard Workshop",
+      issuer: "OfficeMaster",
+      category: "Data Analytics",
+      year: "2025",
+      color: "#f59e0b",
+      image: "assets/images/certificates/powerbiworkshop.png",
+      verifyLink: "assets/images/certificates/powerbiworkshop.png"
+    },
+    {
+      id: 12,
+      title: "INNOWIZ '25 Technical Meet",
+      issuer: "Fatima College",
+      category: "Technical Meet",
+      year: "2025",
+      color: "#ec4899",
+      image: "assets/images/certificates/innowiz2025.png",
+      verifyLink: "assets/images/certificates/innowiz2025.png"
     }
   ],
 
@@ -228,6 +258,12 @@ const PORTFOLIO = {
       title: "Project Expo 2026",
       description: "Secured 1st Prize for project innovation and technology implementation at Thiagarajar College in association with TC-Institution Innovation Council.",
       year: "2026"
+    },
+    {
+      type: "Technical Meet",
+      title: "INNOWIZ '25",
+      description: "Participated in the intercollegiate technical meet organized by the Department of IT & Computer Applications, Fatima College.",
+      year: "2025"
     },
     {
       type: "Hackathon",
