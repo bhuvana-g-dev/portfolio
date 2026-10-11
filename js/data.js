@@ -247,6 +247,36 @@ const PORTFOLIO = {
       color: "#ec4899",
       image: "assets/images/certificates/innowiz2025.png",
       verifyLink: "assets/images/certificates/innowiz2025.png"
+    },
+    {
+      id: 13,
+      title: "MongoDB Basics for Students",
+      issuer: "MongoDB",
+      category: "Database",
+      year: "2025",
+      color: "#00ed64",
+      image: "assets/images/certificates/mongodbbasics.png",
+      verifyLink: "assets/images/certificates/mongodbbasics.png"
+    },
+    {
+      id: 14,
+      title: "MongoDB & Document Model",
+      issuer: "MongoDB",
+      category: "Database",
+      year: "2024",
+      color: "#13aa52",
+      image: "assets/images/certificates/mongodbdocumentmodel.png",
+      verifyLink: "assets/images/certificates/mongodbdocumentmodel.png"
+    },
+    {
+      id: 15,
+      title: "AI & Vector Search",
+      issuer: "MongoDB",
+      category: "AI & ML",
+      year: "2024",
+      color: "#00684a",
+      image: "assets/images/certificates/mongodbaivectorsearch.png",
+      verifyLink: "assets/images/certificates/mongodbaivectorsearch.png"
     }
   ],
 

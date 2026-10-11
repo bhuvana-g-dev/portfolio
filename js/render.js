@@ -130,7 +130,8 @@ function renderCertificates() {
     "AI & ML": "⬡",
     "Hackathon": "⚡",
     "Innovation": "★",
-    "Technical Meet": "✦"
+    "Technical Meet": "✦",
+    "Database": "⛃"
   };
 
   const imageHTML = c.image
