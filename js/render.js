@@ -127,7 +127,9 @@ function renderCertificates() {
     "Data Science": "≋",
     "Data Analytics": "▦",
     "Cloud": "◈",
-    "AI & ML": "⬡"
+    "AI & ML": "⬡",
+    "Hackathon": "⚡",
+    "Innovation": "★"
   };
 
   const imageHTML = c.image
@@ -138,8 +140,9 @@ function renderCertificates() {
          <span class="cert-placeholder-category">${c.category}</span>
        </div>`;
 
+    const verifyLabel = c.verifyLink && (c.verifyLink.endsWith('.png') || c.verifyLink.endsWith('.jpg')) ? 'View ↗' : 'Verify ↗';
     const verifyBtn = c.verifyLink
-      ? `<a href="${c.verifyLink}" target="_blank" rel="noopener" class="cert-verify-btn">Verify ↗</a>`
+      ? `<a href="${c.verifyLink}" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">${verifyLabel}</a>`
       : '';
 
     return `

@@ -187,12 +187,48 @@ const PORTFOLIO = {
       color: "#8b5cf6",
       image: "assets/images/certificates/googleaiessentials.png",
       verifyLink: "https://drive.google.com/file/d/1R-H_eI3U7lGUuk8Y_yqvkiA4h7uj8Io7/view?usp=drive_link"
+    },
+    {
+      id: 7,
+      title: "Project Expo 2026 – First Prize",
+      issuer: "Thiagarajar College",
+      category: "Innovation",
+      year: "2026",
+      color: "#c9a84c",
+      image: "assets/images/certificates/projectexpo2026.png",
+      verifyLink: "assets/images/certificates/projectexpo2026.png"
+    },
+    {
+      id: 8,
+      title: "PYHACZ 2026",
+      issuer: "TC & Tarcin Robotics",
+      category: "Hackathon",
+      year: "2026",
+      color: "#10b981",
+      image: "assets/images/certificates/pyhacz2026.png",
+      verifyLink: "assets/images/certificates/pyhacz2026.png"
+    },
+    {
+      id: 9,
+      title: "Ruby Training (Score: 93.33%)",
+      issuer: "IIT Bombay",
+      category: "Programming",
+      year: "2025",
+      color: "#ef4444",
+      image: "assets/images/certificates/rubytraining.png",
+      verifyLink: "assets/images/certificates/rubytraining.png"
     }
   ],
 
   /* ── ACHIEVEMENTS ─────────────────────────────────────── */
   // Hero stat "Hackathons" auto-counts this array.
   achievements: [
+    {
+      type: "First Prize",
+      title: "Project Expo 2026",
+      description: "Secured 1st Prize for project innovation and technology implementation at Thiagarajar College in association with TC-Institution Innovation Council.",
+      year: "2026"
+    },
     {
       type: "Hackathon",
       title: "PYHACZ 2026",
