@@ -137,7 +137,7 @@ function renderCertificates() {
   };
 
   const imageHTML = c.image
-    ? `<img src="${c.image}" alt="${c.title}" class="cert-img" />`
+    ? `<a href="${c.verifyLink || c.image}" target="_blank" rel="noopener noreferrer" class="cert-img-link" title="Click to view full certificate"><img src="${c.image}" alt="${c.title}" class="cert-img" loading="lazy" /></a>`
     : `<div class="cert-img-placeholder" style="background: linear-gradient(160deg, ${c.color}18, ${c.color}08); border-bottom: 1px solid ${c.color}30;">
          <span class="cert-placeholder-icon" style="color: ${c.color}">${CERT_ICONS[c.category] || '✦'}</span>
          <span class="cert-placeholder-issuer" style="color: ${c.color}">${c.issuer}</span>

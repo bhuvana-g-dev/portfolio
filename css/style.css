@@ -908,7 +908,7 @@ section {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 340px; /* fixed height keeps all cards uniform */
+  height: 410px; /* uniform height keeping cards aligned */
   transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
@@ -918,27 +918,39 @@ section {
   box-shadow: 0 12px 36px rgba(201, 168, 76, 0.12);
 }
 
-/* Certificate image area — taller so real certs are legible */
+/* Certificate image area — full certificate display without cropping */
 .cert-img-wrap {
-  height: 190px;
+  height: 240px;
+  background: #090912;
   overflow: hidden;
   flex-shrink: 0;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-2);
 }
 
-/* Subtle gold shimmer on image hover */
-.cert-img-wrap::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 60%, rgba(9,9,15,0.55));
-  pointer-events: none;
+.cert-img-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
 
 .cert-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* fully visible without any cropping */
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-img {
+  transform: scale(1.02);
 }
 
 .cert-img-placeholder {
@@ -1018,12 +1030,12 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.28rem;
-  margin-top: 0.75rem;
+  margin-top: auto;
   font-size: 0.7rem;
   color: var(--gold);
   font-family: var(--font-mono);
   border: 1px solid rgba(201, 168, 76, 0.22);
-  padding: 0.25rem 0.65rem;
+  padding: 0.28rem 0.72rem;
   border-radius: 7px;
   align-self: flex-start;
   transition: background 0.2s, border-color 0.2s;
@@ -1621,6 +1633,8 @@ footer {
   .nav-burger { display: flex; }
 
   .exp-header { flex-direction: column; gap: 0.45rem; }
+  .cert-inner-wrap { height: 380px; }
+  .cert-img-wrap { height: 210px; }
 }
 
 /* ── ADDITIONAL POLISH ────────────────────────────────────── */
