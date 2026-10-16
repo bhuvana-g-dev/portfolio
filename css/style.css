@@ -876,29 +876,38 @@ section {
 /* ── CERTIFICATES ─────────────────────────────────────────── */
 .cert-carousel-wrap {
   position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cert-carousel-wrap.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cert-carousel-inner {
   overflow: hidden;
   border-radius: var(--radius-lg);
+  user-select: none;
+  cursor: grab;
+}
+
+.cert-carousel-inner:active {
+  cursor: grabbing;
 }
 
 .cert-track {
   display: flex;
+  width: max-content;
   will-change: transform;
 }
 
 .cert-card {
   flex-shrink: 0;
   padding: 0.5rem;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-
-.cert-card.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .cert-inner-wrap {

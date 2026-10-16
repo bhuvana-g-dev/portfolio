@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const revealTargets = [
     '.skill-card', '.project-card', '.achievement-card',
-    '.exp-card', '.contact-card', '.cert-card', '.about-card'
+    '.exp-card', '.contact-card', '.cert-carousel-wrap', '.about-card'
   ];
 
   function observeRevealTargets() {
