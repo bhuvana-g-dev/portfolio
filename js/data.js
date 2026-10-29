@@ -44,48 +44,63 @@ const PORTFOLIO = {
   },
 
   /* ── SKILLS ──────────────────────────────────────────── */
+  // level: "working" (filled dot) or "basics" (hollow dot). Defaults to "working".
+  // note: shown as a tooltip on hover / keyboard focus.
   skills: [
   {
     category: "Frontend",
-    icon: "⬡",
-    color: "#c9a84c",
+    color: "#e8b44c",
     items: [
       { name: "HTML5", note: "Semantic markup" },
       { name: "CSS3", note: "Flexbox, Grid, Animations" },
-      { name: "JavaScript", note: "ES6+, DOM, Async" }
+      { name: "JavaScript", note: "ES6+, DOM, async", level: "basics" },
+      { name: "React", note: "Component-based UI" }
     ]
   },
 
   {
-    category: "Computer Science Fundamentals",
-    icon: "◈",
-    color: "#f59e0b",
+    category: "Backend",
+    color: "#22d3ee",
+    items: [
+      { name: "Node.js", note: "Server-side JavaScript" },
+      { name: "Express.js", note: "Routing & middleware" },
+      { name: "Flask", note: "Python web APIs" },
+      { name: "FastAPI", note: "Typed Python APIs" },
+      { name: "REST APIs", note: "Design & integration" }
+    ]
+  },
+
+  {
+    category: "Databases",
+    color: "#a78bfa",
+    items: [
+      { name: "MongoDB", note: "Document database" },
+      { name: "Firestore", note: "Firebase NoSQL" }
+    ]
+  },
+
+  {
+    category: "Languages and CS",
+    color: "#f472b6",
     items: [
       { name: "Java", note: "OOP & problem solving" },
-      { name: "Data Structures & Algorithms", note: "Problem solving" },
-      { name: "DBMS", note: "Relational databases" },
-      { name: "Computer Networks", note: "Networking basics" }
+      { name: "Python", note: "Scripting & backend", level: "basics" },
+      { name: "C", note: "Programming fundamentals", level: "basics" },
+      { name: "Data structures and algorithms", note: "Problem solving", level: "basics" },
+      { name: "DBMS", note: "SQL & relational design" },
+      { name: "Computer networks", note: "Networking fundamentals" }
     ]
   },
 
   {
-    category: "Development Tools",
-    icon: "◉",
-    color: "#8b5cf6",
+    category: "Tools and deployment",
+    color: "#60a5fa",
     items: [
       { name: "Git", note: "Version control" },
       { name: "GitHub", note: "Code hosting & collaboration" },
-      { name: "VS Code", note: "Development environment" }
-    ]
-  },
-
-  {
-    category: "Currently Learning",
-    icon: "◌",
-    color: "#0ea5e9",
-    items: [
-      { name: "React", note: "Component-based UI" },
-      { name: "Node.js", note: "Backend fundamentals" }
+      { name: "VS Code", note: "Development environment" },
+      { name: "Vercel", note: "Frontend deployment" },
+      { name: "Render", note: "Backend deployment" }
     ]
   }
 ],

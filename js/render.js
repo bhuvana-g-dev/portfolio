@@ -72,22 +72,38 @@ function renderAbout() {
 
 /* ── SKILLS ──────────────────────────────────────────────── */
 function renderSkills() {
-  document.querySelector('.skills-grid').innerHTML = PORTFOLIO.skills.map(cat => `
-    <div class="skill-card" style="--cat-color: ${cat.color}">
-      <div class="skill-card-header">
-        <span class="skill-icon" style="color: ${cat.color}">${cat.icon}</span>
-        <h3>${cat.category}</h3>
-      </div>
-      <ul class="skill-list">
-        ${cat.items.map(item => `
-          <li class="skill-item">
-            <span class="skill-name">${item.name}</span>
-            <span class="skill-note">${item.note}</span>
-          </li>
-        `).join('')}
+  const container = document.querySelector('.skills-table');
+  if (!container) return;
+
+  const rowsHTML = PORTFOLIO.skills.map(cat => `
+    <div class="skill-row" style="--cat-color: ${cat.color}">
+      <h3 class="skill-row-title">
+        <span class="skill-row-icon" aria-hidden="true"></span>
+        ${cat.category}
+      </h3>
+      <ul class="skill-pills">
+        ${cat.items.map(item => {
+          const basics = item.level === 'basics';
+          const tip = item.note ? `${item.note}${basics ? ' · basics' : ''}` : '';
+          return `
+          <li class="skill-pill${basics ? ' skill-pill--basics' : ''}" tabindex="0">
+            <span class="skill-pill-dot" aria-hidden="true"></span>
+            <span class="skill-pill-name">${item.name}</span>
+            ${tip ? `<span class="skill-tip" role="tooltip">${tip}</span>` : ''}
+          </li>`;
+        }).join('')}
       </ul>
     </div>
   `).join('');
+
+  const legendHTML = `
+    <div class="skill-legend">
+      <span class="skill-legend-item"><span class="skill-legend-dot" aria-hidden="true"></span>Working knowledge</span>
+      <span class="skill-legend-item"><span class="skill-legend-dot skill-legend-dot--basics" aria-hidden="true"></span>Basics</span>
+    </div>
+  `;
+
+  container.innerHTML = rowsHTML + legendHTML;
 }
 
 /* ── PROJECTS ─────────────────────────────────────────────── */

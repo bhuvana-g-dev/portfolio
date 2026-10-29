@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   const revealTargets = [
-    '.skill-card', '.project-card', '.achievement-card',
+    '.skill-row', '.project-card', '.achievement-card',
     '.exp-card', '.contact-card', '.cert-carousel-wrap', '.about-card'
   ];
 
@@ -134,9 +134,9 @@ if (typedEl) {
   typeEffect();
 }
 
-  /* ── STAGGER ANIMATION DELAY (skill cards) ──────────── */
-  document.querySelectorAll('.skill-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.08}s`;
+  /* ── STAGGER ANIMATION DELAY (skill rows) ───────────── */
+  document.querySelectorAll('.skill-row').forEach((row, i) => {
+    row.style.transitionDelay = `${i * 0.08}s`;
   });
 
   /* ── CONTACT FORM — Web3Forms AJAX ──────────────────── */
