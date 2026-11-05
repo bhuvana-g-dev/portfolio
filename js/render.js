@@ -125,8 +125,8 @@ function renderProjects() {
             ${p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
           </div>
           <div class="project-links">
-            <a href="${p.liveUrl}" target="_blank" rel="noopener" class="btn-project btn-live">↗ Live Demo</a>
-            <a href="${p.githubUrl}" target="_blank" rel="noopener" class="btn-project btn-code">⬡ GitHub</a>
+            ${p.liveUrl ? `<a href="${p.liveUrl}" target="_blank" rel="noopener" class="btn-project btn-live">↗ Live Demo</a>` : ''}
+            ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener" class="btn-project btn-code">⬡ GitHub</a>` : ''}
           </div>
         </div>
       </div>

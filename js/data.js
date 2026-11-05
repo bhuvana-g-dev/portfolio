@@ -136,6 +136,46 @@ const PORTFOLIO = {
       gradientFallback: "linear-gradient(135deg, #0ea5e9 0%, #c9a84c 100%)",
       liveUrl: "https://royal-spice-garden-frontend.vercel.app/",
       githubUrl: "https://github.com/bhuvana-g-dev/royal-spice-garden-frontend"
+    },
+    {
+      id: 4,
+      title: "Hush: AI Meeting Copilot",
+      description: "Google Meet copilot that listens to live captions, alerts you when your goal topic comes up, suggests doubt questions and auto-captures notes. Strands Decider 2B decides when to speak or stay silent.",
+      tech: ["Chrome Extension", "FastAPI", "Python", "Strands Decider"],
+      image: "assets/images/projects/hush.png",
+      gradientFallback: "linear-gradient(135deg, #3cc9e6 0%, #9b80ff 100%)",
+      liveUrl: "https://hush-meeting-copilot.onrender.com",
+      githubUrl: "https://github.com/bhuvana-g-dev/hush-meeting-copilot"
+    },
+    {
+      id: 5,
+      title: "AI Apartment",
+      description: "Discovery and comparison platform for 90+ AI tools across 14 categories, with a guided AI Finder, side-by-side comparison of up to 4 tools and an admin dashboard. Built with Kiro.",
+      tech: ["React", "Tailwind CSS", "FastAPI", "Firestore", "Gemini"],
+      image: "assets/images/projects/ai-apartment.png",
+      gradientFallback: "linear-gradient(135deg, #f0b94f 0%, #ff7aa2 100%)",
+      liveUrl: "https://ai-apartment-five.vercel.app",
+      githubUrl: "https://github.com/bhuvana-g-dev/ai-apartment"
+    },
+    {
+      id: 6,
+      title: "PlanWise AI",
+      description: "AI-powered event planning platform: venue discovery with OpenStreetMap, budget and quotation tracking, Gemini menu suggestions, guest and RSVP management, and digital invitations.",
+      tech: ["React", "Tailwind CSS", "FastAPI", "Firebase", "Gemini"],
+      image: "assets/images/projects/planwise.png",
+      gradientFallback: "linear-gradient(135deg, #9b80ff 0%, #5aa7ff 100%)",
+      liveUrl: "https://planwise-gray.vercel.app/",
+      githubUrl: "https://github.com/bhuvana-g-dev/Planwise"
+    },
+    {
+      id: 7,
+      title: "Problem 360: Civic Action Platform",
+      description: "Community platform for reporting local civic issues in Madurai, with a social-style feed, organization and volunteer groups, cleanup drives, and AI triage (duplicates, urgency, department) using Strands Agents.",
+      tech: ["React", "FastAPI", "Firestore", "Strands Agents"],
+      image: "assets/images/projects/problem360.png",
+      gradientFallback: "linear-gradient(135deg, #4ade80 0%, #3cc9e6 100%)",
+      liveUrl: "",
+      githubUrl: "https://github.com/bhuvana-g-dev/problem-360"
     }
   ],
 
