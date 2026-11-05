@@ -17,7 +17,7 @@ const PORTFOLIO = {
     typedRoles: ["Aspiring Full Stack Developer", "Java","Exploring Software Development", "Building Real World Projects", "Problem Solver","DSA","Curious Learner"],
     intro: "A motivated Computer Science student focused on frontend development, problem solving, and building real-world web projects while strengthening core software development fundamentals.",
     location: "Madurai, Tamil Nadu",
-    status: "Open to Internship Opportunities",
+    status: "Open to Work",
     profileImage: "assets/images/profile/profile.jpg"
   },
 
@@ -142,7 +142,7 @@ const PORTFOLIO = {
       title: "Hush: AI Meeting Copilot",
       description: "Google Meet copilot that listens to live captions, alerts you when your goal topic comes up, suggests doubt questions and auto-captures notes. Strands Decider 2B decides when to speak or stay silent.",
       tech: ["Chrome Extension", "FastAPI", "Python", "Strands Decider"],
-      image: "assets/images/projects/hush.png",
+      image: "assets/images/projects/hush.jpeg",
       gradientFallback: "linear-gradient(135deg, #3cc9e6 0%, #9b80ff 100%)",
       liveUrl: "https://hush-meeting-copilot.onrender.com",
       githubUrl: "https://github.com/bhuvana-g-dev/hush-meeting-copilot"
@@ -152,7 +152,7 @@ const PORTFOLIO = {
       title: "AI Apartment",
       description: "Discovery and comparison platform for 90+ AI tools across 14 categories, with a guided AI Finder, side-by-side comparison of up to 4 tools and an admin dashboard. Built with Kiro.",
       tech: ["React", "Tailwind CSS", "FastAPI", "Firestore", "Gemini"],
-      image: "assets/images/projects/ai-apartment.png",
+      image: "assets/images/projects/ai-apartment.jpeg",
       gradientFallback: "linear-gradient(135deg, #f0b94f 0%, #ff7aa2 100%)",
       liveUrl: "https://ai-apartment-five.vercel.app",
       githubUrl: "https://github.com/bhuvana-g-dev/ai-apartment"
@@ -162,7 +162,7 @@ const PORTFOLIO = {
       title: "PlanWise AI",
       description: "AI-powered event planning platform: venue discovery with OpenStreetMap, budget and quotation tracking, Gemini menu suggestions, guest and RSVP management, and digital invitations.",
       tech: ["React", "Tailwind CSS", "FastAPI", "Firebase", "Gemini"],
-      image: "assets/images/projects/planwise.png",
+      image: "assets/images/projects/planwise.jpeg",
       gradientFallback: "linear-gradient(135deg, #9b80ff 0%, #5aa7ff 100%)",
       liveUrl: "https://planwise-gray.vercel.app/",
       githubUrl: "https://github.com/bhuvana-g-dev/Planwise"
@@ -423,23 +423,6 @@ const PORTFOLIO = {
       title: "Build with AI",
       description: "Explored AI-driven application development in a collaborative hackathon environment.",
       year: "2026"
-    }
-  ],
-
-  /* ── EXPERIENCE ───────────────────────────────────────── */
-  experience: [
-    {
-      role: "Internship",
-      organization: "Open for Opportunities",
-      duration: "2025 – Present",
-      status: "seeking",
-      description: "Actively seeking frontend development internship opportunities to apply academic knowledge in a professional setting.",
-      contributions: [
-        "Available for frontend development roles",
-        "Comfortable with HTML, CSS, and JavaScript",
-        "Quick learner, eager to contribute to real projects"
-      ],
-      tech: ["HTML", "CSS", "JavaScript", "Git"]
     }
   ]
 };

@@ -199,34 +199,6 @@ function renderAchievements() {
   `).join('');
 }
 
-/* ── EXPERIENCE ───────────────────────────────────────────── */
-function renderExperience() {
-  document.querySelector('.experience-list').innerHTML = PORTFOLIO.experience.map(e => `
-    <div class="exp-card ${e.status === 'seeking' ? 'exp-seeking' : ''}">
-      <div class="exp-left">
-        <div class="exp-dot"></div>
-        <div class="exp-line"></div>
-      </div>
-      <div class="exp-content">
-        <div class="exp-header">
-          <div>
-            <h3 class="exp-role">${e.role}</h3>
-            <p class="exp-org">${e.organization}</p>
-          </div>
-          <span class="exp-duration">${e.duration}</span>
-        </div>
-        <p class="exp-desc">${e.description}</p>
-        <ul class="exp-contributions">
-          ${e.contributions.map(c => `<li><span class="bullet">▸</span>${c}</li>`).join('')}
-        </ul>
-        <div class="exp-tech">
-          ${e.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
 /* ── CONTACT ──────────────────────────────────────────────── */
 // SVG icons for contact cards — crisp at any size
 const CONTACT_ICONS = {
@@ -284,7 +256,6 @@ function renderAll() {
   renderProjects();
   renderCertificates();
   renderAchievements();
-  renderExperience();
   renderContact();
   renderFooter();
 }
