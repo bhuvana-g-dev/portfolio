@@ -184,7 +184,24 @@ function renderCertificates() {
   }).join('');
 }
 
-/* ── ACHIEVEMENTS ─────────────────────────────────────────── */
+/* ── WINS (Achievements section) ──────────────────────────── */
+function renderWins() {
+  const list = document.querySelector('.wins-list');
+  if (!list) return;
+
+  list.innerHTML = PORTFOLIO.wins.map(w => `
+    <article class="win-row">
+      <span class="win-year">${w.year}</span>
+      <div class="win-body">
+        <h3 class="win-title">${w.title}</h3>
+        <p class="win-desc">${w.description}</p>
+      </div>
+      <span class="win-badge"><span class="win-star" aria-hidden="true">★</span> ${w.badge}</span>
+    </article>
+  `).join('');
+}
+
+/* ── PARTICIPATION (Events & Hackathons) ──────────────────── */
 function renderAchievements() {
   document.querySelector('.achievements-grid').innerHTML = PORTFOLIO.achievements.map(a => `
     <div class="achievement-card">
@@ -255,6 +272,7 @@ function renderAll() {
   renderSkills();
   renderProjects();
   renderCertificates();
+  renderWins();
   renderAchievements();
   renderContact();
   renderFooter();

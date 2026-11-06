@@ -385,7 +385,25 @@ const PORTFOLIO = {
     }
   ],
 
-  /* ── ACHIEVEMENTS ─────────────────────────────────────── */
+  /* ── WINS (Achievements section) ──────────────────────── */
+  // Top results only. Shown in the "Events and wins" list.
+  // badge: the label on the right of each row (shown with a ★).
+  wins: [
+    {
+      year: "2026",
+      title: "Anti-Ragging App Development Competition",
+      description: "First Prize in the app development competition for National Anti-Ragging Week at Thiagarajar College.",
+      badge: "First Prize"
+    },
+    {
+      year: "2026",
+      title: "Kiro University Challenge",
+      description: "Ranked 1st among 140+ builders in the build-along run by AWS User Groups Madurai.",
+      badge: "First Rank"
+    }
+  ],
+
+  /* ── PARTICIPATION (Events & Hackathons section) ──────── */
   // Hero stat "Hackathons" auto-counts this array.
   achievements: [
     {

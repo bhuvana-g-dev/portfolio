@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   const revealTargets = [
-    '.skill-row', '.project-card', '.achievement-card',
+    '.skill-row', '.project-card', '.achievement-card', '.win-row',
     '.contact-card', '.cert-carousel-wrap', '.about-card'
   ];
 

@@ -1907,3 +1907,118 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .skill-row { opacity: 1 !important; transform: none !important; }
 }
+
+/* ============================================================
+   ACHIEVEMENTS — "Events and wins" list
+   Row: year (left) · title + description (centre) · ★ badge (right)
+   ============================================================ */
+.wins-list {
+  border-top: 1px solid var(--border-2);
+}
+
+.win-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.9rem 1.5rem 1.9rem 1.25rem;
+  border-bottom: 1px solid var(--border-2);
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(90deg, rgba(201, 168, 76, 0) 0%, rgba(201, 168, 76, 0) 100%);
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s,
+    border-color 0.35s,
+    padding-left 0.35s;
+}
+
+.win-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover: gold wash sweeps in from the left, bar brightens, row nudges right */
+.win-row:hover {
+  background: linear-gradient(90deg, rgba(201, 168, 76, 0.13) 0%, rgba(201, 168, 76, 0) 70%);
+  border-left-color: var(--gold-2);
+  padding-left: 1.6rem;
+  box-shadow: inset 3px 0 18px -6px rgba(201, 168, 76, 0.55);
+}
+
+.win-year {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gold);
+  padding-top: 0.45rem;
+  letter-spacing: 0.02em;
+}
+
+.win-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+  margin-bottom: 0.55rem;
+  transition: color 0.3s;
+}
+
+.win-row:hover .win-title {
+  color: var(--gold-2);
+}
+
+.win-desc {
+  max-width: 480px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+.win-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gold);
+  white-space: nowrap;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.win-star {
+  display: inline-block;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.win-row:hover .win-badge {
+  color: var(--gold-2);
+}
+
+.win-row:hover .win-star {
+  transform: rotate(144deg) scale(1.25);
+}
+
+/* Tablet / mobile: stack the row */
+@media (max-width: 720px) {
+  .win-row {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+  }
+  .win-year,
+  .win-badge { padding-top: 0; }
+  .win-badge { justify-self: start; }
+  .win-row:hover { padding-left: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .win-row { opacity: 1 !important; transform: none !important; transition: none; }
+  .win-row:hover .win-star { transform: none; }
+}
