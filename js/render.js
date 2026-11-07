@@ -263,6 +263,8 @@ function renderFooter() {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
   const nameEl = document.querySelector('.footer-name');
   if (nameEl) nameEl.textContent = PORTFOLIO.profile.name;
+  const handleEl = document.querySelector('.footer-handle');
+  if (handleEl) handleEl.href = PORTFOLIO.contact.githubUrl;
 }
 
 /* ── RENDER ALL ───────────────────────────────────────────── */

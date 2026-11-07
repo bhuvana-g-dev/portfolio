@@ -344,47 +344,129 @@ section {
 
 .hero-actions {
   display: flex;
-  gap: 0.65rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
 }
 
 /* Buttons */
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.6rem 1.15rem;
-  border-radius: 10px;
-  font-size: 0.84rem;
-  font-weight: 500;
-  transition: all 0.2s;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.45rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
   font-family: var(--font-sans);
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s,
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
 }
 
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--gold-2);
+  outline-offset: 3px;
+}
+
+.btn-icon {
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Primary: gold gradient + light sweep on hover */
 .btn-primary {
-  background: var(--gold);
+  background: linear-gradient(135deg, var(--gold-2) 0%, var(--gold) 100%);
   color: #09090f;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--gold-2);
+  box-shadow: 0 6px 22px rgba(201, 168, 76, 0.28);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
 }
 
 .btn-primary:hover {
-  background: var(--gold-2);
-  border-color: var(--gold-2);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.28);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(201, 168, 76, 0.45);
 }
 
+.btn-primary:hover::after {
+  left: 130%;
+}
+
+.btn-primary:hover .btn-icon--download {
+  animation: btn-download-bob 0.9s ease-in-out infinite;
+}
+
+@keyframes btn-download-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* Outline: glass pill with logo; hover picks up each brand's color */
 .btn-outline {
-  background: transparent;
-  color: var(--text-2);
-  border: 1px solid var(--border-2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
 }
 
 .btn-outline:hover {
-  border-color: var(--border);
-  color: var(--gold-2);
-  background: var(--gold-soft);
-  transform: translateY(-1px);
+  transform: translateY(-3px);
+}
+
+.btn-outline:hover .btn-icon {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+.btn-github:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.1);
+}
+
+.btn-linkedin:hover {
+  color: #ffffff;
+  background: rgba(10, 102, 194, 0.28);
+  border-color: #3b8fe0;
+  box-shadow: 0 10px 28px rgba(10, 102, 194, 0.4);
+}
+
+.btn-linkedin:hover .btn-icon {
+  color: #4aa3ff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-icon,
+  .btn-primary::after {
+    transition: none;
+  }
+  .btn-primary:hover .btn-icon--download {
+    animation: none;
+  }
 }
 
 /* Hero card */
@@ -1560,8 +1642,19 @@ footer {
   font-family: var(--font-mono);
 }
 
-.footer-text span {
+.footer-text span,
+.footer-text a {
   color: var(--gold);
+}
+
+.footer-text a {
+  transition: color 0.2s;
+}
+
+.footer-text a:hover {
+  color: var(--gold-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* ── FORM RESULT FEEDBACK ─────────────────────────────────── */
@@ -1618,7 +1711,7 @@ footer {
   .skills-grid { grid-template-columns: 1fr; }
   .achievements-grid { grid-template-columns: 1fr; }
   .contact-links-grid { grid-template-columns: 1fr; }
-  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
 
   /* Mobile nav */
   .nav-links {
