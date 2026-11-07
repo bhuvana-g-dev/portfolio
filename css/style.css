@@ -684,36 +684,186 @@ section {
   font-family: var(--font-mono);
 }
 
-.edu-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
+/* Card: gold frame + glowing top accent so it stands out */
+.edu-card {
+  border-color: rgba(232, 201, 106, 0.45);
+  background:
+    radial-gradient(120% 70% at 100% 0%, rgba(232, 201, 106, 0.1), transparent 60%),
+    var(--bg-card);
+  box-shadow: 0 0 40px rgba(232, 201, 106, 0.07);
+  position: relative;
+  overflow: hidden;
 }
 
-.edu-row {
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-2), var(--gold), var(--purple));
+}
+
+.edu-card .edu-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.edu-card .edu-sub {
+  color: var(--text-2);
+}
+
+.edu-card .edu-icon {
+  border-color: rgba(232, 201, 106, 0.5);
+  background: rgba(232, 201, 106, 0.14);
+}
+
+/* Timeline: thick bright gold line, big dot per entry */
+.edu-rows {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding-left: 2rem;
+}
+
+.edu-rows::before {
+  content: '';
+  position: absolute;
+  top: 0.9rem;
+  bottom: 0.9rem;
+  left: 6px;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, var(--gold-2), var(--gold) 60%, rgba(232, 201, 106, 0.25));
+}
+
+.edu-item {
+  position: relative;
+  padding: 1rem 1.1rem;
+  background: rgba(232, 201, 106, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.edu-item:hover {
+  background: rgba(232, 201, 106, 0.1);
+  border-color: rgba(232, 201, 106, 0.55);
+  transform: translateX(4px);
+  box-shadow: 0 8px 26px rgba(232, 201, 106, 0.12);
+}
+
+.edu-item::before {
+  content: '';
+  position: absolute;
+  top: 1.25rem;
+  left: -2.05rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--gold-2);
+  border: 3px solid var(--bg-2);
+  box-shadow: 0 0 0 2px var(--gold), 0 0 14px rgba(232, 201, 106, 0.7);
+}
+
+.edu-item-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6rem 0.85rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 8px;
-  border: 1px solid var(--border-2);
+  gap: 1rem;
 }
 
-.edu-key {
-  font-size: 0.72rem;
-  color: var(--text-3);
+.edu-item-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.edu-item-year {
+  flex-shrink: 0;
+  padding: 0.18rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--gold-2);
+  background: rgba(232, 201, 106, 0.12);
+  border-radius: 100px;
+}
+
+.edu-item-school {
+  margin-top: 0.4rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #f1ecda;
+}
+
+.edu-item-board {
+  margin-top: 0.1rem;
+  font-size: 0.8rem;
+  color: #b9b29a;
   font-family: var(--font-mono);
 }
 
-.edu-val {
-  font-size: 0.82rem;
-  color: var(--text-1);
-  font-weight: 500;
+.edu-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
 }
 
-.edu-val--accent {
-  color: var(--gold);
+.edu-item-meta:empty {
+  display: none;
+}
+
+/* Marks: the big number on the card */
+.edu-score {
+  padding: 0.4rem 1.1rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: #1a1405;
+  background: linear-gradient(135deg, var(--gold-2), var(--gold));
+  border-radius: 100px;
+  box-shadow: 0 4px 16px rgba(232, 201, 106, 0.35);
+}
+
+.edu-status {
+  position: relative;
+  padding-left: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #e6e1cf;
+}
+
+.edu-status::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+}
+
+@media (max-width: 480px) {
+  .edu-item-head { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  .edu-score { font-size: 1.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-item { transition: none; }
+  .edu-item:hover { transform: none; }
 }
 
 /* ── SKILLS ───────────────────────────────────────────────── */

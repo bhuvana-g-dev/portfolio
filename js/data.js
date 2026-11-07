@@ -36,12 +36,32 @@ const PORTFOLIO = {
   },
 
   /* ── EDUCATION ───────────────────────────────────────── */
-  education: {
-    college: "Thiagarajar College",
-    degree: "B.Sc. Computer Science",
-    duration: "2024 – 2027",
-    status: "Active · Pursuing"
-  },
+  // Newest first. Add another level by copying one block.
+  // status is optional; score is shown as a highlighted chip.
+  education: [
+    {
+      level: "B.Sc. Computer Science",
+      school: "Thiagarajar College, Madurai",
+      board: "Madurai Kamaraj University",
+      duration: "2024 – 2027",
+      score: "84.5% up to Semester IV",
+      status: "Active · Pursuing"
+    },
+    {
+      level: "HSC (Class XII)",
+      school: "AKNU S Sundar Matric Hr. Sec. School",
+      board: "Tamil Nadu State Board",
+      duration: "2024",
+      score: "85.83%"
+    },
+    {
+      level: "SSLC (Class X)",
+      school: "AKNU S Sundar Matric Hr. Sec. School",
+      board: "Tamil Nadu State Board",
+      duration: "2022",
+      score: "83.6%"
+    }
+  ],
 
   /* ── SKILLS ──────────────────────────────────────────── */
   // level: "working" (filled dot) or "basics" (hollow dot). Defaults to "working".

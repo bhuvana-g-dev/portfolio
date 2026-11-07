@@ -55,18 +55,22 @@ function renderHero() {
 
 /* ── ABOUT ───────────────────────────────────────────────── */
 function renderAbout() {
-  const ed = PORTFOLIO.education;
-  const rows = [
-    { key: "College", val: ed.college },
-    { key: "Degree", val: ed.degree },
-    { key: "Duration", val: ed.duration },
-    { key: "Status", val: ed.status, highlight: true }
-  ];
-  document.querySelector('.edu-rows').innerHTML = rows.map(r => `
-    <div class="edu-row">
-      <span class="edu-key">${r.key}</span>
-      <span class="edu-val${r.highlight ? ' edu-val--accent' : ''}">${r.val}</span>
-    </div>
+  const container = document.querySelector('.edu-rows');
+  if (!container) return;
+
+  container.innerHTML = PORTFOLIO.education.map(e => `
+    <article class="edu-item">
+      <div class="edu-item-head">
+        <h4 class="edu-item-title">${e.level}</h4>
+        <span class="edu-item-year">${e.duration}</span>
+      </div>
+      <p class="edu-item-school">${e.school}</p>
+      <p class="edu-item-board">${e.board}</p>
+      <div class="edu-item-meta">
+        ${e.score ? `<span class="edu-score">${e.score}</span>` : ''}
+        ${e.status ? `<span class="edu-status">${e.status}</span>` : ''}
+      </div>
+    </article>
   `).join('');
 }
 
