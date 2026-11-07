@@ -68,6 +68,7 @@ function renderAbout() {
       <p class="edu-item-board">${e.board}</p>
       <div class="edu-item-meta">
         ${e.score ? `<span class="edu-score">${e.score}</span>` : ''}
+        ${e.scoreNote ? `<span class="edu-score-note">${e.scoreNote}</span>` : ''}
         ${e.status ? `<span class="edu-status">${e.status}</span>` : ''}
       </div>
     </article>

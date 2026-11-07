@@ -44,7 +44,8 @@ const PORTFOLIO = {
       school: "Thiagarajar College, Madurai",
       board: "Madurai Kamaraj University",
       duration: "2024 – 2027",
-      score: "84.5% up to Semester IV",
+      score: "84.5%",
+      scoreNote: "up to Semester IV",
       status: "Active · Pursuing"
     },
     {
@@ -192,10 +193,29 @@ const PORTFOLIO = {
       title: "Problem 360: Civic Action Platform",
       description: "Community platform for reporting local civic issues in Madurai, with a social-style feed, organization and volunteer groups, cleanup drives, and AI triage (duplicates, urgency, department) using Strands Agents.",
       tech: ["React", "FastAPI", "Firestore", "Strands Agents"],
-      image: "assets/images/projects/problem360.png",
       gradientFallback: "linear-gradient(135deg, #4ade80 0%, #3cc9e6 100%)",
       liveUrl: "",
       githubUrl: "https://github.com/bhuvana-g-dev/problem-360"
+    },
+    {
+      id: 8,
+      title: "LearnMatrix",
+      description: "Final-year project: an AI-powered adaptive learning platform with role-based roadmaps, diagnostic assessments that compress the syllabus, and per-topic content that adapts to each learner's mastery. Includes an admin panel for resources and analytics.",
+      tech: ["React", "Flask", "Firestore", "Gemini API"],
+      image: "assets/images/projects/learnmatrix.jpeg",
+      gradientFallback: "linear-gradient(135deg, #9b80ff 0%, #3cc9e6 100%)",
+      liveUrl: "https://learn-matrix-ten.vercel.app/",
+      githubUrl: "https://github.com/bhuvana-g-dev/LearnMatrix"
+    },
+    {
+      id: 9,
+      title: "Sugar Island Adventure",
+      description: "3D platformer built in a single 21 KB HTML file with Three.js. Run, jump and collect all 8 stars, hit checkpoints and reach the golden gate, with a rotatable camera, soft shadows and Web Audio sound effects.",
+      tech: ["Three.js", "WebGL", "JavaScript", "Web Audio"],
+      image: "assets/images/projects/sugar-island.jpeg",
+      gradientFallback: "linear-gradient(135deg, #ff7aa2 0%, #f0b94f 100%)",
+      liveUrl: "https://bhuvana-g-dev.github.io/",
+      githubUrl: "https://github.com/bhuvana-g-dev/bhuvana-g-dev.github.io"
     }
   ],
 
