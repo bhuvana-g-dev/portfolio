@@ -305,18 +305,20 @@ section {
 
 /* Typed */
 .hero-typed-wrap {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  color: var(--gold);
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  color: #ffd75e;
+  font-weight: 500;
   font-family: var(--font-mono);
   margin-bottom: 1.4rem;
   min-height: 2rem;
+  text-shadow: 0 0 18px rgba(255, 215, 94, 0.35);
 }
 
 .hero-cursor {
   display: inline-block;
   width: 2px;
   height: 1em;
-  background: var(--gold);
+  background: #ffd75e;
   vertical-align: middle;
   margin-left: 2px;
   animation: blink 1.1s step-end infinite;
@@ -328,7 +330,7 @@ section {
 }
 
 .hero-intro {
-  color: var(--text-2);
+  color: #d6d0bc;
   font-size: 0.94rem;
   line-height: 1.85;
   max-width: 460px;
@@ -337,8 +339,8 @@ section {
 
 .hero-location {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
-  color: var(--text-3);
+  font-size: 0.78rem;
+  color: #b3ad97;
   margin-bottom: 1.8rem;
 }
 
