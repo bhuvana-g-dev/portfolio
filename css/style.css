@@ -1059,12 +1059,29 @@ section {
 .btn-project {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.42rem 0.9rem;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
   border-radius: 8px;
-  font-size: 0.78rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 600;
   transition: all 0.2s;
+}
+
+.btn-project-icon {
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+
+.btn-live:hover .btn-project-icon {
+  transform: translate(2px, -2px);
+}
+
+.btn-code:hover .btn-project-icon {
+  transform: scale(1.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-project-icon { transition: none; }
 }
 
 .btn-live {
@@ -1079,15 +1096,15 @@ section {
 }
 
 .btn-code {
-  background: transparent;
-  color: var(--text-2);
-  border: 1px solid var(--border-2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .btn-code:hover {
-  border-color: var(--border);
-  color: var(--gold-2);
-  background: var(--gold-soft);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* ── CERTIFICATES ─────────────────────────────────────────── */
