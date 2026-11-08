@@ -415,7 +415,7 @@ const PORTFOLIO = {
     },
     {
       id: 20,
-      title: "BYTES 2K26 – 1st Prize Web Designing",
+      title: "BYTES 2K26 – Web Designing (Participation)",
       issuer: "The American College",
       category: "Frontend",
       year: "2026",
@@ -440,22 +440,22 @@ const PORTFOLIO = {
       title: "Kiro University Challenge",
       description: "Ranked 1st among 140+ builders in the build-along run by AWS User Groups Madurai.",
       badge: "First Rank"
+    },
+    {
+      year: "2026",
+      title: "Project Expo 2026",
+      description: "First Prize for project innovation and technology implementation at the Department of Computer Science, Thiagarajar College, with the TC-Institution Innovation Council.",
+      badge: "First Prize"
     }
   ],
 
   /* ── PARTICIPATION (Events & Hackathons section) ──────── */
-  // Hero stat "Hackathons" auto-counts this array.
+  // Hero stat "Hackathons" counts only the entries with type "Hackathon".
   achievements: [
     {
-      type: "First Prize",
+      type: "Competition",
       title: "BYTES 2K26 – Web Designing",
-      description: "Won First Prize in the Web Designing inter-collegiate competition at The American College, Madurai.",
-      year: "2026"
-    },
-    {
-      type: "First Prize",
-      title: "Project Expo 2026",
-      description: "Secured 1st Prize for project innovation and technology implementation at Thiagarajar College in association with TC-Institution Innovation Council.",
+      description: "Participated in the Web Designing event at BYTES 2K26, an inter-collegiate competition by the Department of Computer Science, The American College, Madurai.",
       year: "2026"
     },
     {

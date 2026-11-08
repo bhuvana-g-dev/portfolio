@@ -13,7 +13,7 @@ function renderHero() {
   const autoStats = [
     { num: PORTFOLIO.projects.length, label: "Projects Live" },
     { num: PORTFOLIO.certificates.length, label: "Certificates" },
-    { num: PORTFOLIO.achievements.length, label: "Hackathons" },
+    { num: PORTFOLIO.achievements.filter(a => a.type === "Hackathon").length, label: "Hackathons" },
     { num: PORTFOLIO.skills.length, label: "Core Skills" }
   ];
 

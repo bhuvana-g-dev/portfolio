@@ -19,11 +19,14 @@ function initCertCarousel() {
   const totalOriginal = originalCards.length;
   if (!totalOriginal) return;
 
-  // Clone original cards to create a true seamless infinite loop
+  // Clone original cards to create a true seamless infinite loop.
+  // Clones are hidden from screen readers, so their links must not be
+  // reachable with Tab either.
   originalCards.forEach(card => {
     const clone = card.cloneNode(true);
     clone.classList.add('cert-card-clone');
     clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('a, button').forEach(el => el.setAttribute('tabindex', '-1'));
     track.appendChild(clone);
   });
 
@@ -34,7 +37,10 @@ function initCertCarousel() {
 
   let currentX = 0;
   let targetNudge = 0;
-  let isPaused = false;
+  // The carousel moves only when none of these are true.
+  let hoverPaused = false;  // mouse is over it
+  let focusPaused = false;  // keyboard focus is inside it
+  let userPaused = false;   // the pause button was pressed (or reduced motion is on)
   let isDragging = false;
   let dragStartX = 0;
   let dragStartPos = 0;
@@ -98,13 +104,13 @@ function initCertCarousel() {
     lastTimestamp = now;
 
     // Constant-speed automatic continuous scrolling from right to left
-    if (!isPaused && !isDragging) {
+    if (!hoverPaused && !focusPaused && !userPaused && !isDragging) {
       currentX += baseSpeed * dt;
     }
 
-    // Smoothly absorb arrow / dot nudge adjustments
+    // Absorb arrow / dot nudges: glide normally, jump instantly under reduced motion
     if (Math.abs(targetNudge) > 0.5) {
-      const step = targetNudge * 0.14;
+      const step = reduceMotion ? targetNudge : targetNudge * 0.14;
       currentX += step;
       targetNudge -= step;
     } else {
@@ -150,8 +156,68 @@ function initCertCarousel() {
 
   // Hover to pause so users can easily read or click "Verify / View"
   if (wrap) {
-    wrap.addEventListener('mouseenter', () => { isPaused = true; });
-    wrap.addEventListener('mouseleave', () => { isPaused = false; });
+    // Real mouse only. A tap on a phone fires a "hover" that never ends,
+    // which would leave the carousel stuck.
+    wrap.addEventListener('pointerenter', e => {
+      if (e.pointerType === 'mouse') hoverPaused = true;
+    });
+    wrap.addEventListener('pointerleave', e => {
+      if (e.pointerType === 'mouse') hoverPaused = false;
+    });
+
+    // Keyboard users: hold still while Tab focus is inside the carousel.
+    // Clicking a button also focuses it, so only count keyboard focus.
+    wrap.addEventListener('focusin', e => {
+      let keyboard = true;
+      try { keyboard = e.target.matches(':focus-visible'); } catch (err) { /* old browser */ }
+      focusPaused = keyboard;
+    });
+    wrap.addEventListener('focusout', e => {
+      if (!wrap.contains(e.relatedTarget)) focusPaused = false;
+    });
+  }
+
+  // Pause / play button (works for mouse, keyboard and touch)
+  const pauseBtn = document.querySelector('.cert-pause');
+  const PAUSE_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  const PLAY_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
+
+  function setUserPaused(paused) {
+    userPaused = paused;
+    if (!pauseBtn) return;
+    pauseBtn.innerHTML = paused ? PLAY_ICON : PAUSE_ICON;
+    pauseBtn.setAttribute('aria-label', paused ? 'Play certificate carousel' : 'Pause certificate carousel');
+    pauseBtn.title = paused ? 'Play' : 'Pause';
+  }
+
+  if (pauseBtn) {
+    pauseBtn.addEventListener('click', e => {
+      e.preventDefault();
+      const nowPaused = !userPaused;
+      setUserPaused(nowPaused);
+      // Pressing Play is an explicit request to move, even though the
+      // mouse is over the carousel and the button has focus.
+      if (!nowPaused) {
+        hoverPaused = false;
+        focusPaused = false;
+      }
+    });
+  }
+
+  // Respect "reduce motion": start paused, and follow the setting if it changes
+  const motionQuery = window.matchMedia
+    ? window.matchMedia('(prefers-reduced-motion: reduce)')
+    : null;
+  let reduceMotion = !!(motionQuery && motionQuery.matches);
+  setUserPaused(reduceMotion);
+
+  if (motionQuery) {
+    const onMotionChange = e => {
+      reduceMotion = e.matches;
+      setUserPaused(e.matches);
+    };
+    if (motionQuery.addEventListener) motionQuery.addEventListener('change', onMotionChange);
+    else if (motionQuery.addListener) motionQuery.addListener(onMotionChange);
   }
 
   // Touch and drag support

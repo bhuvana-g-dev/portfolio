@@ -1348,6 +1348,20 @@ section {
   background: var(--gold-soft);
 }
 
+.cert-arrow:focus-visible {
+  outline: 2px solid var(--gold-2);
+  outline-offset: 2px;
+}
+
+/* Pause / play sits a little apart from the prev / next arrows */
+.cert-pause {
+  margin-right: 0.35rem;
+}
+
+.cert-pause svg {
+  display: block;
+}
+
 /* ── ACHIEVEMENTS ─────────────────────────────────────────── */
 #achievements {
   background: var(--bg-2);
