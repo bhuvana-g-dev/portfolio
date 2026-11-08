@@ -27,20 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.setAttribute('aria-expanded', navLinks.classList.contains('open'));
   });
 
+  function closeMenu() {
+    navLinks.classList.remove('open');
+    burger.classList.remove('active');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+
   // Close menu on nav link click
   document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      burger.classList.remove('active');
-    });
+    a.addEventListener('click', closeMenu);
   });
 
   // Close on outside click
   document.addEventListener('click', e => {
-    if (!navbar.contains(e.target)) {
-      navLinks.classList.remove('open');
-      burger.classList.remove('active');
-    }
+    if (!navbar.contains(e.target)) closeMenu();
+  });
+
+  // Close with the Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
   });
 
   /* ── ACTIVE NAV HIGHLIGHT ───────────────────────────── */
