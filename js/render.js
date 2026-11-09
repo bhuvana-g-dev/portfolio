@@ -11,7 +11,7 @@ function renderHero() {
   // ── Auto-count stats from actual data arrays ──────────────
   // No more manual updates — adding a project/cert updates hero automatically
   const autoStats = [
-    { num: PORTFOLIO.projects.length, label: "Projects Live" },
+    { num: PORTFOLIO.projects.length + (PORTFOLIO.games || []).length, label: "Projects Live" },
     { num: PORTFOLIO.certificates.length, label: "Certificates" },
     { num: PORTFOLIO.achievements.filter(a => a.type === "Hackathon").length, label: "Hackathons" },
     { num: PORTFOLIO.skills.length, label: "Core Skills" }
@@ -123,7 +123,15 @@ function renderProjects() {
 
   renderEarlierProjects(earlier);
 
-  document.querySelector('.projects-grid').innerHTML = main.map(p => {
+  document.querySelector('.projects-grid').innerHTML = main.map(projectCardHTML).join('');
+}
+
+function renderGames() {
+  renderEarlierProjects(PORTFOLIO.games || [], '.projects-games', '.games-list');
+}
+
+function projectCardHTML(p) {
+  {
     const visualHTML = p.image
       ? `<img src="${p.image}" alt="${p.title}" class="project-img" />`
       : `<div class="project-gradient-fallback" style="background: ${p.gradientFallback}">
@@ -146,13 +154,13 @@ function renderProjects() {
         </div>
       </div>
     `;
-  }).join('');
+  }
 }
 
 // Compact row: small thumbnail, title, one line, and icon-only links.
-function renderEarlierProjects(list) {
-  const wrap = document.querySelector('.projects-earlier');
-  const container = document.querySelector('.projects-earlier-list');
+function renderEarlierProjects(list, wrapSel = '.projects-earlier:not(.projects-games)', listSel = '.projects-earlier-list:not(.games-list)') {
+  const wrap = document.querySelector(wrapSel);
+  const container = document.querySelector(listSel);
   if (!wrap || !container) return;
 
   if (!list.length) {
@@ -321,6 +329,7 @@ function renderAll() {
   renderAbout();
   renderSkills();
   renderProjects();
+  renderGames();
   renderCertificates();
   renderWins();
   renderAchievements();

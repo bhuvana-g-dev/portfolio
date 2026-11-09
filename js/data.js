@@ -181,16 +181,6 @@ const PORTFOLIO = {
       githubUrl: "https://github.com/bhuvana-g-dev/SecureStayQR"
     },
     {
-      id: 9,
-      title: "Sugar Island Adventure",
-      description: "3D platformer built in a single 21 KB HTML file with Three.js. Run, jump and collect all 8 stars, hit checkpoints and reach the golden gate, with a rotatable camera, soft shadows and Web Audio sound effects.",
-      tech: ["Three.js", "WebGL", "JavaScript", "Web Audio"],
-      image: "assets/images/projects/sugar-island.jpeg",
-      gradientFallback: "linear-gradient(135deg, #ff7aa2 0%, #f0b94f 100%)",
-      liveUrl: "https://bhuvana-g-dev.github.io/",
-      githubUrl: "https://github.com/bhuvana-g-dev/bhuvana-g-dev.github.io"
-    },
-    {
       id: 7,
       title: "Problem 360: Civic Action Platform",
       description: "Community platform for reporting local civic issues in Madurai, with a social-style feed, organization and volunteer groups, cleanup drives, and AI triage (duplicates, urgency, department) using Strands Agents.",
@@ -450,6 +440,21 @@ const PORTFOLIO = {
       title: "Project Expo 2026",
       description: "First Prize for project innovation and technology implementation at the Department of Computer Science, Thiagarajar College, with the TC-Institution Innovation Council.",
       badge: "First Prize"
+    }
+  ],
+
+  /* ── GAMING ───────────────────────────────────────────── */
+  // Game projects. Same fields as projects. Counted in the hero "Projects Live" stat.
+  games: [
+    {
+      id: 9,
+      title: "Sugar Island Adventure",
+      description: "3D platformer built in a single 21 KB HTML file with Three.js. Run, jump and collect all 8 stars, hit checkpoints and reach the golden gate, with a rotatable camera, soft shadows and Web Audio sound effects.",
+      tech: ["Three.js", "WebGL", "JavaScript", "Web Audio"],
+      image: "assets/images/projects/sugar-island.jpeg",
+      gradientFallback: "linear-gradient(135deg, #ff7aa2 0%, #f0b94f 100%)",
+      liveUrl: "https://bhuvana-g-dev.github.io/",
+      githubUrl: "https://github.com/bhuvana-g-dev/bhuvana-g-dev.github.io"
     }
   ],
 

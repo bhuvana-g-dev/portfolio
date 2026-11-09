@@ -2469,6 +2469,7 @@ footer {
 
 @media (max-width: 900px) {
   .projects-earlier-list { grid-template-columns: 1fr; }
+  .projects-games { margin-top: 2rem; }
 }
 
 @media (max-width: 480px) {
