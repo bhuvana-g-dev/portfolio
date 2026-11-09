@@ -118,7 +118,12 @@ const GITHUB_ICON = `<svg class="btn-project-icon" width="15" height="15" viewBo
 const EXTERNAL_ICON = `<svg class="btn-project-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>`;
 
 function renderProjects() {
-  document.querySelector('.projects-grid').innerHTML = PORTFOLIO.projects.map(p => {
+  const main = PORTFOLIO.projects.filter(p => !p.earlier);
+  const earlier = PORTFOLIO.projects.filter(p => p.earlier);
+
+  renderEarlierProjects(earlier);
+
+  document.querySelector('.projects-grid').innerHTML = main.map(p => {
     const visualHTML = p.image
       ? `<img src="${p.image}" alt="${p.title}" class="project-img" />`
       : `<div class="project-gradient-fallback" style="background: ${p.gradientFallback}">
@@ -140,6 +145,39 @@ function renderProjects() {
           </div>
         </div>
       </div>
+    `;
+  }).join('');
+}
+
+// Compact row: small thumbnail, title, one line, and icon-only links.
+function renderEarlierProjects(list) {
+  const wrap = document.querySelector('.projects-earlier');
+  const container = document.querySelector('.projects-earlier-list');
+  if (!wrap || !container) return;
+
+  if (!list.length) {
+    wrap.hidden = true;
+    return;
+  }
+
+  container.innerHTML = list.map(p => {
+    const thumb = p.image
+      ? `<img src="${p.image}" alt="" class="project-mini-img" loading="lazy" />`
+      : `<span class="project-mini-img" style="background: ${p.gradientFallback}"></span>`;
+
+    return `
+      <article class="project-mini">
+        ${thumb}
+        <div class="project-mini-body">
+          <h4 class="project-mini-title">${p.title}</h4>
+          <p class="project-mini-desc">${p.description}</p>
+          <p class="project-mini-tech">${p.tech.join(' · ')}</p>
+        </div>
+        <div class="project-mini-links">
+          ${p.liveUrl ? `<a href="${p.liveUrl}" target="_blank" rel="noopener" class="project-mini-link" aria-label="${p.title} live demo" title="Live demo">${EXTERNAL_ICON}</a>` : ''}
+          ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener" class="project-mini-link" aria-label="${p.title} on GitHub" title="GitHub">${GITHUB_ICON}</a>` : ''}
+        </div>
+      </article>
     `;
   }).join('');
 }

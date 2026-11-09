@@ -127,46 +127,18 @@ const PORTFOLIO = {
 ],
   /* ── PROJECTS ─────────────────────────────────────────── */
   // Hero stat "Projects Live" auto-counts this array.
+  // Shown in this order, so keep the strongest work at the top.
+  // earlier: true moves a project into the smaller "Earlier work" row.
   projects: [
     {
-      id: 1,
-      title: "StayQR Emergency Platform",
-      description: "AI-powered hospitality emergency response platform using QR technology and Firebase integration.",
-      tech: ["HTML", "CSS", "JavaScript", "Firebase"],
-      image: "assets/images/projects/stayqr.png",
-      status: "LIVE PROJECT",
-      liveUrl: "https://stayqr-cc92e.web.app",
-      githubUrl: "https://github.com/bhuvana-g-dev/SecureStayQR"
-    },
-    {
-      id: 2,
-      title: "Friendship Card Website",
-      description: "Designed and developed a creative friendship greeting webpage with responsive layout and an attractive UI using HTML and CSS. Focused on clean visual design and cross-device compatibility.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      image: "assets/images/projects/friendshipcard.png",
-      gradientFallback: "linear-gradient(135deg, #c9a84c 0%, #8b5cf6 100%)",
-      liveUrl: "https://friendship-card-ry3y.vercel.app/",
-      githubUrl: "https://github.com/bhuvana-g-dev/friendship-card"
-    },
-    {
-      id: 3,
-      title: "Royal Spice Garden",
-      description: "Built a responsive hotel and restaurant website with navigation, structured sections, and modern frontend design. Demonstrates multi-section layout skills and UI consistency.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      image: "assets/images/projects/royalspice.png",
-      gradientFallback: "linear-gradient(135deg, #0ea5e9 0%, #c9a84c 100%)",
-      liveUrl: "https://royal-spice-garden-frontend.vercel.app/",
-      githubUrl: "https://github.com/bhuvana-g-dev/royal-spice-garden-frontend"
-    },
-    {
-      id: 4,
-      title: "Hush: AI Meeting Copilot",
-      description: "Google Meet copilot that listens to live captions, alerts you when your goal topic comes up, suggests doubt questions and auto-captures notes. Strands Decider 2B decides when to speak or stay silent.",
-      tech: ["Chrome Extension", "FastAPI", "Python", "Strands Decider"],
-      image: "assets/images/projects/hush.jpeg",
-      gradientFallback: "linear-gradient(135deg, #3cc9e6 0%, #9b80ff 100%)",
-      liveUrl: "https://hush-meeting-copilot.onrender.com",
-      githubUrl: "https://github.com/bhuvana-g-dev/hush-meeting-copilot"
+      id: 8,
+      title: "LearnMatrix",
+      description: "Final-year project: an AI-powered adaptive learning platform with role-based roadmaps, diagnostic assessments that compress the syllabus, and per-topic content that adapts to each learner's mastery. Includes an admin panel for resources and analytics.",
+      tech: ["React", "Flask", "Firestore", "Gemini API"],
+      image: "assets/images/projects/learnmatrix.jpeg",
+      gradientFallback: "linear-gradient(135deg, #9b80ff 0%, #3cc9e6 100%)",
+      liveUrl: "https://learn-matrix-ten.vercel.app/",
+      githubUrl: "https://github.com/bhuvana-g-dev/LearnMatrix"
     },
     {
       id: 5,
@@ -179,6 +151,16 @@ const PORTFOLIO = {
       githubUrl: "https://github.com/bhuvana-g-dev/ai-apartment"
     },
     {
+      id: 4,
+      title: "Hush: AI Meeting Copilot",
+      description: "Google Meet copilot that listens to live captions, alerts you when your goal topic comes up, suggests doubt questions and auto-captures notes. Strands Decider 2B decides when to speak or stay silent.",
+      tech: ["Chrome Extension", "FastAPI", "Python", "Strands Decider"],
+      image: "assets/images/projects/hush.jpeg",
+      gradientFallback: "linear-gradient(135deg, #3cc9e6 0%, #9b80ff 100%)",
+      liveUrl: "https://hush-meeting-copilot.onrender.com",
+      githubUrl: "https://github.com/bhuvana-g-dev/hush-meeting-copilot"
+    },
+    {
       id: 6,
       title: "PlanWise AI",
       description: "AI-powered event planning platform: venue discovery with OpenStreetMap, budget and quotation tracking, Gemini menu suggestions, guest and RSVP management, and digital invitations.",
@@ -187,6 +169,26 @@ const PORTFOLIO = {
       gradientFallback: "linear-gradient(135deg, #9b80ff 0%, #5aa7ff 100%)",
       liveUrl: "https://planwise-gray.vercel.app/",
       githubUrl: "https://github.com/bhuvana-g-dev/Planwise"
+    },
+    {
+      id: 1,
+      title: "StayQR Emergency Platform",
+      description: "AI-powered hospitality emergency response platform using QR technology and Firebase integration.",
+      tech: ["HTML", "CSS", "JavaScript", "Firebase"],
+      image: "assets/images/projects/stayqr.png",
+      status: "LIVE PROJECT",
+      liveUrl: "https://stayqr-cc92e.web.app",
+      githubUrl: "https://github.com/bhuvana-g-dev/SecureStayQR"
+    },
+    {
+      id: 9,
+      title: "Sugar Island Adventure",
+      description: "3D platformer built in a single 21 KB HTML file with Three.js. Run, jump and collect all 8 stars, hit checkpoints and reach the golden gate, with a rotatable camera, soft shadows and Web Audio sound effects.",
+      tech: ["Three.js", "WebGL", "JavaScript", "Web Audio"],
+      image: "assets/images/projects/sugar-island.jpeg",
+      gradientFallback: "linear-gradient(135deg, #ff7aa2 0%, #f0b94f 100%)",
+      liveUrl: "https://bhuvana-g-dev.github.io/",
+      githubUrl: "https://github.com/bhuvana-g-dev/bhuvana-g-dev.github.io"
     },
     {
       id: 7,
@@ -198,24 +200,26 @@ const PORTFOLIO = {
       githubUrl: "https://github.com/bhuvana-g-dev/problem-360"
     },
     {
-      id: 8,
-      title: "LearnMatrix",
-      description: "Final-year project: an AI-powered adaptive learning platform with role-based roadmaps, diagnostic assessments that compress the syllabus, and per-topic content that adapts to each learner's mastery. Includes an admin panel for resources and analytics.",
-      tech: ["React", "Flask", "Firestore", "Gemini API"],
-      image: "assets/images/projects/learnmatrix.jpeg",
-      gradientFallback: "linear-gradient(135deg, #9b80ff 0%, #3cc9e6 100%)",
-      liveUrl: "https://learn-matrix-ten.vercel.app/",
-      githubUrl: "https://github.com/bhuvana-g-dev/LearnMatrix"
+      id: 2,
+      earlier: true,
+      title: "Friendship Card Website",
+      description: "A friendship greeting webpage with a responsive layout and clean visual design.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "assets/images/projects/friendshipcard.png",
+      gradientFallback: "linear-gradient(135deg, #c9a84c 0%, #8b5cf6 100%)",
+      liveUrl: "https://friendship-card-ry3y.vercel.app/",
+      githubUrl: "https://github.com/bhuvana-g-dev/friendship-card"
     },
     {
-      id: 9,
-      title: "Sugar Island Adventure",
-      description: "3D platformer built in a single 21 KB HTML file with Three.js. Run, jump and collect all 8 stars, hit checkpoints and reach the golden gate, with a rotatable camera, soft shadows and Web Audio sound effects.",
-      tech: ["Three.js", "WebGL", "JavaScript", "Web Audio"],
-      image: "assets/images/projects/sugar-island.jpeg",
-      gradientFallback: "linear-gradient(135deg, #ff7aa2 0%, #f0b94f 100%)",
-      liveUrl: "https://bhuvana-g-dev.github.io/",
-      githubUrl: "https://github.com/bhuvana-g-dev/bhuvana-g-dev.github.io"
+      id: 3,
+      earlier: true,
+      title: "Royal Spice Garden",
+      description: "A responsive multi-section hotel and restaurant website.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "assets/images/projects/royalspice.png",
+      gradientFallback: "linear-gradient(135deg, #0ea5e9 0%, #c9a84c 100%)",
+      liveUrl: "https://royal-spice-garden-frontend.vercel.app/",
+      githubUrl: "https://github.com/bhuvana-g-dev/royal-spice-garden-frontend"
     }
   ],
 
@@ -480,6 +484,18 @@ const PORTFOLIO = {
       type: "Hackathon",
       title: "Build with AI",
       description: "Explored AI-driven application development in a collaborative hackathon environment.",
+      year: "2026"
+    },
+    {
+      type: "Hackathon",
+      title: "PromptWar",
+      description: "Built and submitted a project in an AI-evaluated challenge, scoring 95.65/100 across code quality, security, efficiency, testing, accessibility and problem alignment.",
+      year: "2026"
+    },
+    {
+      type: "Competition",
+      title: "Anti-Ragging App Development",
+      description: "Won a prize in the app development competition held during National Anti-Ragging Week at Thiagarajar College, Madurai.",
       year: "2026"
     }
   ]

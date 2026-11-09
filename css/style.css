@@ -2358,3 +2358,126 @@ footer {
   .win-row { opacity: 1 !important; transform: none !important; transition: none; }
   .win-row:hover .win-star { transform: none; }
 }
+
+/* ============================================================
+   PROJECTS — "Earlier work" compact row
+   Small thumbnail · title + one line · icon-only links
+   ============================================================ */
+.projects-earlier {
+  margin-top: 3rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--border-2);
+}
+
+.projects-earlier-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-bottom: 1rem;
+}
+
+.projects-earlier-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-mini {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.project-mini:hover {
+  border-color: var(--border);
+  background: var(--bg-card-hover);
+}
+
+.project-mini-img {
+  display: block;
+  flex-shrink: 0;
+  width: 84px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--border-2);
+}
+
+.project-mini-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-mini-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.3;
+}
+
+.project-mini-desc {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.project-mini-tech {
+  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-3);
+}
+
+.project-mini-links {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.4rem;
+}
+
+.project-mini-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--text-1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.project-mini-link:hover {
+  color: var(--gold-2);
+  border-color: var(--border-hover);
+  background: var(--gold-soft);
+}
+
+.project-mini-link:focus-visible {
+  outline: 2px solid var(--gold-2);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .projects-earlier-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .project-mini { flex-wrap: wrap; }
+  .project-mini-img { width: 72px; height: 52px; }
+  .project-mini-body { flex-basis: calc(100% - 90px); }
+  .project-mini-links { width: 100%; justify-content: flex-end; }
+}
+
+@media (pointer: coarse) {
+  .project-mini-link { width: 44px; height: 44px; }
+}
