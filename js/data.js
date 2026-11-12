@@ -14,8 +14,8 @@ const PORTFOLIO = {
     name: "Bhuvaneshwari G",
     shortName: "bhuvana",
     tagline: "B.Sc. Computer Science Student",
-    typedRoles: ["Aspiring Full Stack Developer", "Java","Exploring Software Development", "Building Real World Projects", "Problem Solver","DSA","Curious Learner"],
-    intro: "A motivated Computer Science student focused on frontend development, problem solving, and building real-world web projects while strengthening core software development fundamentals.",
+    typedRoles: ["Full Stack Software Developer", "Building with React & FastAPI", "Shipping AI-Powered Web Apps", "Java & DSA Problem Solver", "Curious Learner"],
+    intro: "A final-year Computer Science student who builds full-stack web applications with React, Python and Firebase, from AI-powered learning platforms to real-time dashboards, while strengthening core software fundamentals.",
     location: "Madurai, Tamil Nadu",
     status: "Open to Work",
     profileImage: "assets/images/profile/profile.jpg"
