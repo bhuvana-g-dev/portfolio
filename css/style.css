@@ -853,103 +853,6 @@ section {
   .edu-item { transition: none; }
 }
 
-/* ── SKILLS ───────────────────────────────────────────────── */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
-}
-
-.skill-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-2);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  backdrop-filter: blur(8px);
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, opacity 0.55s;
-  opacity: 0;
-  transform: translateY(20px);
-  position: relative;
-  overflow: hidden;
-}
-
-.skill-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1.5px;
-  background: linear-gradient(90deg, var(--cat-color, var(--gold)), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.skill-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.skill-card:hover {
-  border-color: var(--border);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(201, 168, 76, 0.08);
-}
-
-.skill-card:hover::before {
-  opacity: 1;
-}
-
-.skill-card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  margin-bottom: 1.3rem;
-}
-
-.skill-icon {
-  font-size: 1.1rem;
-}
-
-.skill-card-header h3 {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text-1);
-}
-
-.skill-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-.skill-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.55rem 0.75rem;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid var(--border-2);
-  border-radius: 8px;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.skill-card:hover .skill-item {
-  border-color: rgba(201, 168, 76, 0.12);
-}
-
-.skill-name {
-  font-size: 0.82rem;
-  color: var(--text-1);
-  font-weight: 500;
-}
-
-.skill-note {
-  font-size: 0.7rem;
-  color: var(--text-3);
-  font-family: var(--font-mono);
-}
-
 /* ── PROJECTS ─────────────────────────────────────────────── */
 #projects {
   background: var(--bg-2);
@@ -1437,127 +1340,6 @@ section {
   line-height: 1.7;
 }
 
-/* ── EXPERIENCE ───────────────────────────────────────────── */
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.exp-card {
-  display: flex;
-  gap: 1.1rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.55s, transform 0.55s;
-}
-
-.exp-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.exp-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.exp-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--gold);
-  border: 2px solid var(--bg);
-  box-shadow: 0 0 0 3px var(--gold-soft);
-  margin-top: 6px;
-}
-
-.exp-seeking .exp-dot {
-  background: var(--text-3);
-  box-shadow: 0 0 0 3px rgba(92, 88, 72, 0.15);
-}
-
-.exp-line {
-  flex: 1;
-  width: 1px;
-  background: var(--border-2);
-  margin-top: 8px;
-}
-
-.exp-content {
-  background: var(--bg-card);
-  border: 1px solid var(--border-2);
-  border-radius: var(--radius-lg);
-  padding: 1.4rem;
-  flex: 1;
-}
-
-.exp-seeking .exp-content {
-  border-style: dashed;
-  opacity: 0.82;
-}
-
-.exp-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 0.65rem;
-}
-
-.exp-role {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-1);
-}
-
-.exp-org {
-  font-size: 0.78rem;
-  color: var(--gold);
-  font-family: var(--font-mono);
-  margin-top: 0.15rem;
-}
-
-.exp-duration {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-3);
-  white-space: nowrap;
-  padding: 0.16rem 0.52rem;
-  background: var(--gold-soft);
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.exp-desc {
-  font-size: 0.85rem;
-  color: var(--text-2);
-  line-height: 1.75;
-  margin-bottom: 0.9rem;
-}
-
-.exp-contributions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.38rem;
-  margin-bottom: 0.9rem;
-}
-
-.exp-contributions li {
-  display: flex;
-  gap: 0.52rem;
-  font-size: 0.83rem;
-  color: var(--text-2);
-}
-
-.exp-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.38rem;
-}
-
 /* ── CONTACT ──────────────────────────────────────────────── */
 #contact {
   background: var(--bg-2);
@@ -1851,17 +1633,6 @@ footer {
   border: 1px solid rgba(248, 113, 113, 0.2);
 }
 
-/* ── SCROLL REVEAL BASE ───────────────────────────────────── */
-.skill-card,
-.project-card,
-.achievement-card,
-.exp-card,
-.contact-card,
-.cert-card,
-.about-card {
-  /* opacity and transform set inline; visible class reveals */
-}
-
 /* ── RESPONSIVE ───────────────────────────────────────────── */
 /* Tablets and down: 8 links don't fit, so switch to the hamburger menu */
 @media (max-width: 1000px) {
@@ -1997,23 +1768,6 @@ footer {
   border-left-color: var(--gold);
 }
 
-/* Skill item: dot indicator */
-.skill-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-.skill-item::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--cat-color, var(--gold));
-  opacity: 0.5;
-  flex-shrink: 0;
-}
-.skill-item .skill-name { flex: 1; }
-
 /* Project: gold tint border on hover */
 .project-card:hover {
   border-color: rgba(201, 168, 76, 0.2);
@@ -2032,15 +1786,6 @@ footer {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-/* Seeking experience animated border */
-@keyframes seekPulse {
-  0%, 100% { border-color: rgba(92,88,72,0.25); }
-  50% { border-color: rgba(201,168,76,0.15); }
-}
-.exp-seeking .exp-content {
-  animation: seekPulse 3.5s ease-in-out infinite;
 }
 
 /* Cert placeholder icon styles */
